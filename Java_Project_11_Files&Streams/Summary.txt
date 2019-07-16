@@ -1,0 +1,8 @@
+William Archbold
+CSC-240-500 Programming in Java
+Mon Jul 15 19:13:10 MDT 2019
+Count of values=10000
+Sum of values=5014.314251599740000
+Average=0.501431425159974
+Maximum=0.999902254781280
+Minimum=0.000021260344885

@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+
+<GridPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="259.0" prefWidth="374.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="TemperatureConversionController">
+  <columnConstraints>
+    <ColumnConstraints hgrow="SOMETIMES" maxWidth="279.66668701171875" minWidth="10.0" prefWidth="204.6666259765625" />
+  </columnConstraints>
+  <rowConstraints>
+    <RowConstraints fillHeight="false" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+  </rowConstraints>
+   <children>
+      <Label fx:id="convertFromLabel" text="Convert From:" />
+      <Label fx:id="convertToLabel" text="Convert To:" GridPane.rowIndex="3" />
+      <TextField fx:id="convertFromTextField" onAction="#convertFromValueChanged" onInputMethodTextChanged="#convertFromValueChanged" onMouseExited="#convertFromValueChanged2" GridPane.rowIndex="2" />
+      <TextField fx:id="convertToTextField" editable="false" GridPane.rowIndex="5" />
+      <HBox prefHeight="100.0" prefWidth="200.0" GridPane.rowIndex="1">
+         <children>
+            <RadioButton fx:id="convertFromFahrenheitButton" mnemonicParsing="false" onMouseClicked="#fromTemperatureBecomesFahrenheit" selected="true" text="Fahrenheit">
+               <toggleGroup>
+                  <ToggleGroup fx:id="fromTempGroup" />
+               </toggleGroup></RadioButton>
+            <RadioButton fx:id="convertFromCelsiusButton" mnemonicParsing="false" onMouseClicked="#fromTemperatureBecomesCelsius" text="Celsius" toggleGroup="$fromTempGroup" />
+            <RadioButton fx:id="convertFromKelvinButton" mnemonicParsing="false" onMouseClicked="#fromTemperatureBecomesKelvin" prefHeight="17.0" prefWidth="108.0" text="Kelvin" toggleGroup="$fromTempGroup" />
+         </children>
+      </HBox>
+      <HBox prefHeight="100.0" prefWidth="200.0" GridPane.rowIndex="4">
+         <children>
+            <RadioButton fx:id="convertToFahrenheitButton" mnemonicParsing="false" onMouseClicked="#toTemperatureBecomesFahrenheit" selected="true" text="Fahrenheit">
+               <toggleGroup>
+                  <ToggleGroup fx:id="toTempGroup" />
+               </toggleGroup></RadioButton>
+            <RadioButton fx:id="convertToCelsiusButton" mnemonicParsing="false" onMouseClicked="#toTemperatureBecomesCelsius" text="Celsius" toggleGroup="$toTempGroup" />
+            <RadioButton fx:id="convertToKelvinButton" mnemonicParsing="false" onMouseClicked="#toTemperatureBecomesKelvin" text="Kelvin" toggleGroup="$toTempGroup" />
+         </children>
+      </HBox>
+   </children>
+   <padding>
+      <Insets bottom="14.0" left="14.0" right="14.0" />
+   </padding>
+</GridPane>
